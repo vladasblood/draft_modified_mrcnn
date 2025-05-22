@@ -832,7 +832,6 @@ class RepPointsHead(AnchorFreeHead):
                 zip(cls_score_list, bbox_pred_list, mlvl_priors)):
             assert cls_score.size()[-2:] == bbox_pred.size()[-2:]
             
-            print('bbox_pred.shape before permute:', bbox_pred.shape)
             C, H, W = bbox_pred.shape
             bbox_pred = bbox_pred.permute(1, 2, 0).reshape(-1, C)
 
